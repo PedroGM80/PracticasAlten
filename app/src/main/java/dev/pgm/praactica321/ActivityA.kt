@@ -1,6 +1,7 @@
 package dev.pgm.praactica321
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -22,6 +23,7 @@ class ActivityA : AppCompatActivity() {
 
         val buttonLaunchToast: Button = findViewById(R.id.activityBtnLaunchIntent)
         val buttonLaunchResult: Button = findViewById(R.id.activityBtnLaunchIntentResult)
+        val buttonWebOpen:Button=findViewById(R.id.activityBtnLaunchIntentWeb)
         buttonLaunchToast.setOnClickListener {
 
             val intent = Intent(this, ActivityB::class.java)
@@ -42,6 +44,13 @@ class ActivityA : AppCompatActivity() {
             intent.putExtra(EXTRA_MESSAGE, message)
 
             startActivityForResult(intent, TEXT_REQUEST)
+        }
+
+        buttonWebOpen.setOnClickListener{
+            val url = "http://www.google.com"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            startActivity(i)
         }
     }
 }
