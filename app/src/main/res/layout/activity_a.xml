@@ -26,9 +26,10 @@
         android:id="@+id/activityBtnLaunchIntent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/send_a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/activityBtnLaunchIntentResult"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activityEditTextTextTop" />
 
@@ -37,10 +38,22 @@
         android:id="@+id/activityBtnLaunchIntentResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/send_b"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_chainStyl="packed"
-        app:layout_constraintStart_toEndOf="@id/activityBtnLaunchIntent"
+        app:layout_constraintEnd_toStartOf="@id/activityBtnLaunchIntent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/activityBtnLaunchIntentWeb"
         app:layout_constraintTop_toBottomOf="@id/activityEditTextTextTop" />
 
+
+    <Button
+        android:id="@+id/activityBtnLaunchIntentWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_web"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/activityBtnLaunchIntentResult"
+        app:layout_constraintTop_toBottomOf="@id/activityEditTextTextTop" />
 </androidx.constraintlayout.widget.ConstraintLayout>

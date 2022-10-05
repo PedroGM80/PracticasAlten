@@ -7,16 +7,22 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 
-const val EXTRA_MESSAGE = "twoactivities.extra.MESSAGE"
-
 class ActivityA : AppCompatActivity() {
+    // private val LOG_TAG: String = ActivityA::class.java.simpleName
+    val TEXT_REQUEST = 1
+
+    // Unique tag required for the intent extra
+    companion object {
+        const val EXTRA_MESSAGE = "com.example.android.twoactivities.extra.MESSAGE"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a)
 
-        val button: Button = findViewById(R.id.activityBtnLaunchIntent)
-
-        button.setOnClickListener {
+        val buttonLaunchToast: Button = findViewById(R.id.activityBtnLaunchIntent)
+        val buttonLaunchResult: Button = findViewById(R.id.activityBtnLaunchIntentResult)
+        buttonLaunchToast.setOnClickListener {
 
             val intent = Intent(this, ActivityB::class.java)
             val editTextMsn: EditText = findViewById(R.id.activityEditTextTextTop)
@@ -24,6 +30,18 @@ class ActivityA : AppCompatActivity() {
 
             intent.putExtra(EXTRA_MESSAGE, message)
             startActivity(intent)
+            //  startActivityForResult(intent, TEXT_REQUEST)
+        }
+
+        buttonLaunchResult.setOnClickListener {
+
+            val intent = Intent(this, ActivityB::class.java)
+            val editTextMsn: EditText = findViewById(R.id.activityEditTextTextTop)
+            val message: String = editTextMsn.text.toString()
+
+            intent.putExtra(EXTRA_MESSAGE, message)
+
+            startActivityForResult(intent, TEXT_REQUEST)
         }
     }
 }
