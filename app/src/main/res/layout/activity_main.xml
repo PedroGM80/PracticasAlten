@@ -8,18 +8,28 @@
 
 
     <EditText
-        android:id="@+id/editTextTextActivityA"
+        android:id="@+id/activityEditTextTextTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="520dp"
-
-
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/activityBtnLaunchIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/activityEditTextTextTop"
+        app:layout_constraintStart_toStartOf="@id/activityEditTextTextTop"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
