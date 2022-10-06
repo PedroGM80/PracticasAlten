@@ -62,4 +62,4 @@ class ActivityA : AppCompatActivity() {
             startActivity(webOpenIntent)
         }
     }
-}
+}//a
