@@ -7,5 +7,8 @@ class ScreenStudentAddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen_student_add)
+
+        var students= mutableListOf<StudentData>()
+
     }
 }
