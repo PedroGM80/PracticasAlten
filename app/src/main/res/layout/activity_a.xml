@@ -18,7 +18,7 @@
         android:ems="10"
         android:inputType="text"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/activityBtnLaunchIntent"
+        app:layout_constraintBottom_toTopOf="@+id/activityA__btn__launch_toast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,37 +26,37 @@
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/activityBtnLaunchIntent"
+        android:id="@+id/activityA__btn__launch_toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send_a"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activityBtnLaunchIntentResult"
+        app:layout_constraintEnd_toStartOf="@id/activityB_btn_launch_toast"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activityAEditTextMessageUserIn" />
 
 
     <Button
-        android:id="@+id/activityBtnLaunchIntentResult"
+        android:id="@+id/activityB_btn_launch_toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send_b"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activityBtnLaunchIntent"
+        app:layout_constraintEnd_toStartOf="@id/activityA__btn__launch_toast"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toEndOf="@id/activityBtnLaunchIntentWeb"
+        app:layout_constraintStart_toEndOf="@id/activityA__btn__launch_web"
         app:layout_constraintTop_toBottomOf="@id/activityAEditTextMessageUserIn" />
 
 
     <Button
-        android:id="@+id/activityBtnLaunchIntentWeb"
+        android:id="@+id/activityA__btn__launch_web"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send_web"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@id/activityBtnLaunchIntentResult"
+        app:layout_constraintStart_toEndOf="@id/activityB_btn_launch_toast"
         app:layout_constraintTop_toBottomOf="@id/activityAEditTextMessageUserIn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
