@@ -53,8 +53,7 @@ class ActivityB : AppCompatActivity() {
         setContentView(R.layout.activity_b)
 
         val message = intent.getStringExtra(EXTRA_MESSAGE)
-        if (message?.isNotBlank() == true) {
-
+        if (message != null) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
 
