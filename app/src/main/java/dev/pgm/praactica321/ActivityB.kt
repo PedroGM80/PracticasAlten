@@ -23,23 +23,23 @@ class ActivityB : AppCompatActivity() {
 
         val intentColor = Intent(this@ActivityB, ActivityA::class.java)
         intentColor.putExtra(EXTRA_COLOR_VALUE, COLOR_RED)
-        setIntentColor(intentColor)
+        setResultAndFinish(intentColor)
     }
 
     private val onClickButtonGreen = View.OnClickListener {
 
         val intentColor = Intent(this@ActivityB, ActivityA::class.java)
         intentColor.putExtra(EXTRA_COLOR_VALUE, COLOR_GREEN)
-        setIntentColor(intentColor)
+        setResultAndFinish(intentColor)
     }
     private val onClickButtonBlue = View.OnClickListener {
 
         val intentColor = Intent(this@ActivityB, ActivityA::class.java)
         intentColor.putExtra(EXTRA_COLOR_VALUE, COLOR_BLUE)
-        setIntentColor(intentColor)
+        setResultAndFinish(intentColor)
     }
 
-    private fun setIntentColor(intentColor: Intent) {
+    private fun setResultAndFinish(intentColor: Intent) {
 
         setResult(RESULT_OK, intentColor)
         finish()
@@ -47,19 +47,20 @@ class ActivityB : AppCompatActivity() {
 
     private val getButtonRed: Button
         get() = findViewById(R.id.activityB__btn__back__color_red)
+
     private val getButtonGreen: Button
         get() = findViewById(R.id.activityB__btn__back__color_green)
+
     private val getButtonBlue: Button
         get() = findViewById(R.id.activityB__btn__back__color_blue)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_b)
-
         val message = intent.getStringExtra(EXTRA_MESSAGE)
         if (message != null) {
+
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
 
