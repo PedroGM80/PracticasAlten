@@ -39,14 +39,13 @@ class ActivityB : AppCompatActivity() {
         finish()
     }
 
-    private val getButtons: Triple<Button?, Button?, Button?>
-        get() {
+    private val getButtonRed: Button
+        get() = findViewById(R.id.activityB__btn__back__color_red)
+    private val getButtonGreen: Button
+        get() = findViewById(R.id.activityB__btn__back__color_green)
+    private val getButtonBlue: Button
+        get() = findViewById(R.id.activityB__btn__back__color_blue)
 
-            val buttonRed: Button? = findViewById(R.id.activityB__btn__back__color_red)
-            val buttonGreen: Button? = findViewById(R.id.activityB__btn__back__color_green)
-            val buttonBlue: Button? = findViewById(R.id.activityB__btn__back__color_blue)
-            return Triple(buttonRed, buttonGreen, buttonBlue)
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -59,8 +58,8 @@ class ActivityB : AppCompatActivity() {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
 
-        getButtons.first?.setOnClickListener(onClickButtonRed)
-        getButtons.second?.setOnClickListener(onClickButtonGreen)
-        getButtons.third?.setOnClickListener(onClickButtonBlue)
+        getButtonRed.setOnClickListener(onClickButtonRed)
+        getButtonGreen.setOnClickListener(onClickButtonGreen)
+        getButtonBlue.setOnClickListener(onClickButtonBlue)
     }
 }

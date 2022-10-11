@@ -68,7 +68,6 @@ class ActivityA : AppCompatActivity() {
 
     private val onClickButtonOpenWeb = View.OnClickListener {
 
-
         val webOpenIntent = Intent(Intent.ACTION_VIEW)
 
         webOpenIntent.data = Uri.parse(URL)
@@ -76,20 +75,13 @@ class ActivityA : AppCompatActivity() {
     }
 
     private val getButtonToast: Button
-        get() {
-            val buttonLaunchToast: Button = findViewById(R.id.activityA__btn__launch_toast)
-            return (buttonLaunchToast)
-        }
+        get() = findViewById(R.id.activityA__btn__launch_toast)
+
     private val getButtonLaunchResult: Button
-        get() {
-            val buttonLaunchResult: Button = findViewById(R.id.activityB__btn__launch_toast2)
-            return (buttonLaunchResult)
-        }
+        get() = findViewById(R.id.activityB__btn__launch_toast2)
+
     private val getButtonWebOpen: Button
-        get() {
-            val buttonWebOpen: Button = findViewById(R.id.activityA__btn__launch_web)
-            return (buttonWebOpen)
-        }
+        get() = findViewById(R.id.activityA__btn__launch_web)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
