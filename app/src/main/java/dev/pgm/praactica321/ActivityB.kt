@@ -11,25 +11,31 @@ import dev.pgm.praactica321.ActivityA.Companion.EXTRA_MESSAGE
 import dev.pgm.practica322.R
 
 
+private const val COLOR_RED = "#FF0000"
+
+private const val COLOR_GREEN = "#1AD321"
+
+private const val COLOR_BLUE = "#3F51B5"
+
 class ActivityB : AppCompatActivity() {
 
     private val onClickButtonRed = View.OnClickListener {
 
         val intentColor = Intent(this@ActivityB, ActivityA::class.java)
-        intentColor.putExtra(EXTRA_COLOR_VALUE, "#FF0000")
+        intentColor.putExtra(EXTRA_COLOR_VALUE, COLOR_RED)
         setIntentColor(intentColor)
     }
 
     private val onClickButtonGreen = View.OnClickListener {
 
         val intentColor = Intent(this@ActivityB, ActivityA::class.java)
-        intentColor.putExtra(EXTRA_COLOR_VALUE, "#1AD321")
+        intentColor.putExtra(EXTRA_COLOR_VALUE, COLOR_GREEN)
         setIntentColor(intentColor)
     }
     private val onClickButtonBlue = View.OnClickListener {
 
         val intentColor = Intent(this@ActivityB, ActivityA::class.java)
-        intentColor.putExtra(EXTRA_COLOR_VALUE, "#3F51B5")
+        intentColor.putExtra(EXTRA_COLOR_VALUE, COLOR_BLUE)
         setIntentColor(intentColor)
     }
 
