@@ -31,9 +31,12 @@ class ActivityA : AppCompatActivity() {
         }
 
     private fun setBackgroundColorOfIntent(data: Intent?) {
-        val colorValue = data?.getStringExtra(EXTRA_COLOR_VALUE).toString()
+        val colorValue: String = data?.getStringExtra(EXTRA_COLOR_VALUE).toString()
+
         val constraintLayout = findViewById<ConstraintLayout>(R.id.activityAConstraintInitialView)
-        constraintLayout.setBackgroundColor(Color.parseColor(colorValue))
+        if (!colorValue.isNullOrBlank()) {
+            constraintLayout.setBackgroundColor(Color.parseColor(colorValue))
+        }
     }
 
     private val onClickButtonResultV2 = View.OnClickListener {
@@ -86,7 +89,7 @@ class ActivityA : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-             setBackgroundColorOfIntent(data)
+                setBackgroundColorOfIntent(data)
             }
         }
     }
