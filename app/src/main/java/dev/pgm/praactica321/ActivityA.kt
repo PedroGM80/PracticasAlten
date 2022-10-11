@@ -11,7 +11,7 @@ import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import dev.pgm.practica322.R
+
 
 
 class ActivityA : AppCompatActivity() {
@@ -71,7 +71,8 @@ class ActivityA : AppCompatActivity() {
         val webOpenIntent = Intent(Intent.ACTION_VIEW)
 
         webOpenIntent.data = Uri.parse(URL)
-        startActivity(webOpenIntent)
+        startActivityForResult(webOpenIntent, REQUEST_CODE)
+
     }
 
     private val getButtonToast: Button
@@ -95,6 +96,7 @@ class ActivityA : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 setBackgroundColorOfIntent(data)

@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import dev.pgm.praactica321.ActivityA.Companion.EXTRA_COLOR_VALUE
 import dev.pgm.praactica321.ActivityA.Companion.EXTRA_MESSAGE
-import dev.pgm.practica322.R
 
 
 private const val COLOR_RED = "#FF0000"
