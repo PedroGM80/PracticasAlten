@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import dev.pgm.praactica321.ActivityA.Companion.EXTRA_COLOR_VALUE
 import dev.pgm.praactica321.ActivityA.Companion.EXTRA_MESSAGE
+import dev.pgm.practica322.R
 
 
 class ActivityB : AppCompatActivity() {

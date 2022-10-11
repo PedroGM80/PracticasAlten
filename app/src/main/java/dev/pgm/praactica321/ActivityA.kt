@@ -11,6 +11,7 @@ import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import dev.pgm.practica322.R
 
 
 class ActivityA : AppCompatActivity() {
@@ -76,9 +77,9 @@ class ActivityA : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a)
 
-        getButtons.first?.setOnClickListener(onClickButtonResultV1)
-        getButtons.second?.setOnClickListener(onClickButtonResultV2)
-        getButtons.third?.setOnClickListener(onClickButtonOpenWeb)
+        getButtons.first.setOnClickListener(onClickButtonResultV1)
+        getButtons.second.setOnClickListener(onClickButtonResultV2)
+        getButtons.third.setOnClickListener(onClickButtonOpenWeb)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
