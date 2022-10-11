@@ -75,21 +75,30 @@ class ActivityA : AppCompatActivity() {
         startActivity(webOpenIntent)
     }
 
-    private val getButtons: Triple<Button, Button, Button>
+    private val getButtonToast: Button
         get() {
             val buttonLaunchToast: Button = findViewById(R.id.activityA__btn__launch_toast)
-            val buttonLaunchResult: Button = findViewById(R.id.activityB__btn__launch_toast2)
-            val buttonWebOpen: Button = findViewById(R.id.activityA__btn__launch_web)
-            return Triple(buttonLaunchToast, buttonLaunchResult, buttonWebOpen)
+            return (buttonLaunchToast)
         }
+    private val getButtonLaunchResult: Button
+        get() {
+            val buttonLaunchResult: Button = findViewById(R.id.activityB__btn__launch_toast2)
+            return (buttonLaunchResult)
+        }
+    private val getButtonWebOpen: Button
+        get() {
+            val buttonWebOpen: Button = findViewById(R.id.activityA__btn__launch_web)
+            return (buttonWebOpen)
+        }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a)
 
-        getButtons.first.setOnClickListener(onClickButtonResultV1)
-        getButtons.second.setOnClickListener(onClickButtonResultV2)
-        getButtons.third.setOnClickListener(onClickButtonOpenWeb)
+        getButtonToast.setOnClickListener(onClickButtonResultV1)
+        getButtonLaunchResult.setOnClickListener(onClickButtonResultV2)
+        getButtonWebOpen.setOnClickListener(onClickButtonOpenWeb)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
