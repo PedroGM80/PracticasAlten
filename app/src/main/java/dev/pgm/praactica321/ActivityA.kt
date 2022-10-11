@@ -31,25 +31,31 @@ class ActivityA : AppCompatActivity() {
         }
 
     private fun setBackgroundColorOfIntent(data: Intent?) {
-        val colorValue: String = data?.getStringExtra(EXTRA_COLOR_VALUE).toString()
 
-        val constraintLayout = findViewById<ConstraintLayout>(R.id.activityAConstraintInitialView)
-        if (!colorValue.isNullOrBlank()) {
+        val colorValue: String = data?.getStringExtra(EXTRA_COLOR_VALUE).toString()
+        val constraintLayout: ConstraintLayout? =
+            findViewById<ConstraintLayout>(R.id.activityAConstraintInitialView)
+
+        if (!colorValue.isNullOrBlank() && constraintLayout != null) {
             constraintLayout.setBackgroundColor(Color.parseColor(colorValue))
         }
     }
 
     private val onClickButtonResultV2 = View.OnClickListener {
+
         val intent = getIntentMessage()
         resultLauncher.launch(intent)
     }
 
     private fun getIntentMessage(): Intent {
-        val intent = Intent(this@ActivityA, ActivityB::class.java)
-        val editTextMsn: EditText = findViewById(R.id.activityA__editText__Message_UserIn)
-        val message: String = editTextMsn.text.toString()
 
-        intent.putExtra(EXTRA_MESSAGE, message)
+        val intent = Intent(this@ActivityA, ActivityB::class.java)
+        val editTextMsn: EditText? = findViewById(R.id.activityA__editText__Message_UserIn)
+
+        if (editTextMsn != null) {
+            val message: String = editTextMsn.text.toString()
+            intent.putExtra(EXTRA_MESSAGE, message)
+        }
         return intent
     }
 
