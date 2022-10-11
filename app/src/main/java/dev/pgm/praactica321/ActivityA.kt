@@ -41,7 +41,7 @@ class ActivityA : AppCompatActivity() {
 
         val colorValue: String = data?.getStringExtra(EXTRA_COLOR_VALUE).toString()
         val constraintLayout: ConstraintLayout? =
-            findViewById<ConstraintLayout>(R.id.activityAConstraintInitialView)
+            findViewById(R.id.activityAConstraintInitialView)
 
         if (!colorValue.isNullOrBlank() && constraintLayout != null) {
             constraintLayout.setBackgroundColor(Color.parseColor(colorValue))
