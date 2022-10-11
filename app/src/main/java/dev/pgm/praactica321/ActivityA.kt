@@ -17,7 +17,7 @@ import dev.pgm.practica322.R
 class ActivityA : AppCompatActivity() {
 
     private val onClickButtonResultV1 = View.OnClickListener {
-        val intent = intentMessage()
+        val intent = getIntentMessage()
         startActivityForResult(intent, REQUEST_CODE)
     }
 
@@ -37,11 +37,11 @@ class ActivityA : AppCompatActivity() {
     }
 
     private val onClickButtonResultV2 = View.OnClickListener {
-        val intent = intentMessage()
+        val intent = getIntentMessage()
         resultLauncher.launch(intent)
     }
 
-    private fun intentMessage(): Intent {
+    private fun getIntentMessage(): Intent {
         val intent = Intent(this@ActivityA, ActivityB::class.java)
         val editTextMsn: EditText = findViewById(R.id.activityA__editText__Message_UserIn)
         val message: String = editTextMsn.text.toString()
