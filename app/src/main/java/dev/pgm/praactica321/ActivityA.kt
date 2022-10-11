@@ -16,6 +16,13 @@ import dev.pgm.practica322.R
 
 class ActivityA : AppCompatActivity() {
 
+    companion object {
+        const val EXTRA_MESSAGE = "Message"
+        const val EXTRA_COLOR_VALUE = "Color"
+        const val REQUEST_CODE = 2
+        const val URL = "https://codelabs.developers.google.com/android-training/"
+    }
+
     private val onClickButtonResultV1 = View.OnClickListener {
         val intent = getIntentMessage()
         startActivityForResult(intent, REQUEST_CODE)
@@ -61,17 +68,11 @@ class ActivityA : AppCompatActivity() {
 
     private val onClickButtonOpenWeb = View.OnClickListener {
 
-        val url = "https://codelabs.developers.google.com/android-training/"
+
         val webOpenIntent = Intent(Intent.ACTION_VIEW)
 
-        webOpenIntent.data = Uri.parse(url)
+        webOpenIntent.data = Uri.parse(URL)
         startActivity(webOpenIntent)
-    }
-
-    companion object {
-        const val EXTRA_MESSAGE = "Message"
-        const val EXTRA_COLOR_VALUE = "Color"
-        const val REQUEST_CODE = 2
     }
 
     private val getButtons: Triple<Button, Button, Button>
